@@ -1,0 +1,46 @@
+<%- include('parts/header.ejs')%>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+
+    <form method="POST" action="/register">
+        <div class="form-outline mb-4">
+            <input type="text" id="form2Example1" name="name" class="form-control" placeholder="Name"/>
+            
+          </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="email" id="form2Example1" name="email" class="form-control" placeholder="Email"/>
+          
+        </div>
+      
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="password" id="form2Example2" name="password" class="form-control" placeholder="password"/>
+          
+        </div>
+
+        <% if(message){ %>
+        <div class="alert alert-danger">
+          <%= message %>
+        </div>
+        <% } %>
+        
+        <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+      
+        
+      </form>
+    
+</div>
+
+
+
+<%- include('parts/bottom.ejs')%>

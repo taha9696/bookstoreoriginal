@@ -1,0 +1,54 @@
+<%- include('parts/header.ejs')%>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <form method="POST" action="/mybooks/update" enctype="multipart/form-data">
+        <div class="form-group">
+          <label >Book Title</label>
+          <input type="text" class="form-control" name="title" value="<%- bookupdate.title %>">
+        </div>
+        <div class="form-group">
+            <label >description</label>
+            <textarea type="text" class="form-control"  name="description"><%-bookupdate.description%></textarea>
+          </div>
+          <input type="hidden" name="bookid" value="<%- bookupdate._id %>">
+          <div class="form-group">
+            <label >Author</label>
+            <input type="text" class="form-control" name="author" value="<%-bookupdate.author%>">
+          </div>
+          <div class="form-group">
+            <label >Price</label>
+            <input type="number" class="form-control" name="price" value="<%-bookupdate.price%>">
+          </div>
+          <img src="/uploads/<%- bookupdate.image %>" width="100" height="100" >
+
+          <input type="hidden" name="oldimage" value="<%-bookupdate.image%>">
+          <div class="form-group">
+            <label >Image</label>
+            <input type="file" accept=".jpg,.png,.jpeg" class="form-control" name="image">
+          </div>
+          <% if(smessage){ %>
+          <div class="alert alert-success">
+            <%= smessage %> 
+
+          </div>
+          <%}%>
+          <% if(emessage){ %>
+            <div class="alert alert-danger">
+              <%= emessage %> 
+  
+            </div>
+            <%}%>
+         
+        <button type="submit" class="btn btn-primary">update</button>
+      </form>
+</div>
+
+
+<%- include('parts/bottom.ejs')%>
